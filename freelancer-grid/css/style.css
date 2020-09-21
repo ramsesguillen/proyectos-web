@@ -1,0 +1,138 @@
+
+:root {
+    --fuentePrincipal: 'Gothic A1', sans-serif;
+    --fuenteSecundaria: 'Oswald', sans-serif;
+    --primario: #f1a94e;
+    --secundario: #44b3c2;
+    --claro: #ffffff;
+}
+
+ html {
+     box-sizing: border-box;
+     font-size: 62.5%; /** 1rem = 10px **/
+ }
+ 
+ *,
+ *:before,
+ *:after {
+     box-sizing: inherit;
+ }
+ 
+body {
+    font-size: 1.6rem;
+    line-height: 2;
+    font-family: var(--fuentePrincipal);
+ }
+
+.contenedor {
+    max-width: 110rem;
+    width: 90%;
+    margin: 0 auto;
+}
+ img {
+     max-width: 100%;
+}
+h1 {
+    font-size: 2.8rem;
+}
+h2 {
+    font-size: 2.6rem;
+}
+ h3 {
+    font-size: 2.4rem;
+}
+p {
+    font-family: var(--fuentePrincipal);
+    font-size: 1.2rem;
+}
+
+/* Hero  */
+.hero {
+    background-image: url(../img/fondo.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+ 
+.hero .contenedor {
+    display: grid;
+    align-content: center;
+    height: 100vh;
+}
+ .hero .contenido {
+    text-align: center;
+    color: var(--claro);
+}
+ .titulo {
+    margin: 0;
+}
+.subtitulo {
+    font-size: 1.6rem;
+}
+
+/* Servicios  */
+.servicios {
+    text-align: center;
+    margin-top: 3rem;
+}
+.servicios h2 {
+    padding-bottom: .5rem;
+}
+.servicios h2::after {
+    content: '';
+    width: 7rem;
+    height: .5rem;
+    background-color: var(--primario);
+    display: block;
+    margin: 1rem auto 0 auto;
+}
+.servicios i {
+    font-size: 3rem;
+    color: var(--secundario);
+}
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+/* Portafolio  */
+.elemento {
+    border-bottom: 1px solid #5b5b5b;
+    margin-bottom: 3rem;
+}
+.elemento:last-of-type {
+    border: none;
+}
+@media (min-width: 768px) {
+    .listado {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
+        grid-auto-rows: max-content;
+    }
+    .elemento {
+        border: none;
+    }
+    .elemento:nth-child(3) {
+        grid-row-end: span 2;
+    }
+}
+
+.footer {
+    background-image: url(../img/contacto.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--claro);
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+@media (min-width: 768px) {
+    .footer .contenedor {
+        display: grid;
+        grid-template-columns: repeat(2, 30%) auto;
+    }
+}
